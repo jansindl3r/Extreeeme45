@@ -35,9 +35,11 @@ class Extreme:
     def getSelectedCS(self) -> dict:
         # creates a tree of selected contours and segments
         collector: dict = {}
+        selectAll: bool = True if g.selection else False
+        print(selectAll)
         for c in self.g:
             for seg in c:
-                if seg.selected:
+                if seg.selected or not selectAll:
                     collector.setdefault(c.index, []).append(seg.index)
         return collector
 
@@ -147,4 +149,4 @@ if __name__ == "__main__":
     e = Extreme(g, angle=math.pi / 4)
     with g.undo(f"Extreme points under 45° in {g.name}"):
         e.perform()
-    del e
+    g.deselect()
