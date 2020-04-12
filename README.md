@@ -3,4 +3,9 @@
 1. Empty selection counts as the whole glyph was selected
 2. It rounds on-curve points that the extension added and ensures that its off-curve points are exactly 45 degrees when rounded to the grid.
 3. It only modifies selected segments, rest of the data stays untouched.
-4. It is prepared to support other angles in the future. Possibly also supporting step-checking of safe angles.  
+4. It is prepared to support other angles in the future. Possibly also supporting step-checking of safe angles.
+## plas
+- add support for customization of angle where to put extreme point
+- add contextual menu for people prefering to work with mouse
+## Version history
+- 0.1 initial commit, basic functionality of adding extrema point
